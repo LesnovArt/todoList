@@ -1,11 +1,11 @@
 import React from "react";
 import { TodoListItem } from "./TodoListItem";
 
-export const TodoList: React.FC<TodoListProps> = ({ todos, toggleTodo }) => {
+export const TodoList: React.FC<TodoListProps> = ({ todos, toggleTodo, deleteTodo }) => {
   return (
     <ul>
-      {todos.map((todo, index) => (
-        <TodoListItem key={`${todo.text}${index}`} todo={todo} toggleTodo={toggleTodo} />
+      {todos.map((todo) => (
+        <TodoListItem key={`${todo.id}`} todo={todo} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       ))}
     </ul>
   );

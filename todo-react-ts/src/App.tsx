@@ -24,14 +24,23 @@ const App: React.FC = () => {
       ...todos,
       {
         text: newTodo,
+        id: Number(Date.now()),
+        priority: 5,
         isDone: false,
       },
     ]);
   };
 
+  const deleteTodo: DeleteTodo = (id) => {
+    const filteredTodos = todos.filter((todo) => {
+      return todo.id !== id;
+    });
+    setTodos(filteredTodos);
+  };
+
   return (
     <>
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       <AddTodoForm addTodo={addTodo} />
     </>
   );
