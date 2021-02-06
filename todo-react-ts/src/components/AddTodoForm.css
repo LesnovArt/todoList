@@ -1,0 +1,27 @@
+.todoForm {
+	margin: 100px 0px 10px 0px;
+}
+
+.todoForm__input {
+	padding: 10px;
+	border: 2px solid #fff;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	word-wrap: break-word;
+}
+
+.todoForm__btn {
+	padding: 10px;
+	margin: 10px;
+	margin-right: 0px;
+	background-color: #0066ff;
+	color: #fff;
+	border: 2px solid #0066ff;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.todoForm__btn:hover {
+	background-color: #003399;
+	border: 2px solid #003399;
+}

@@ -1,8 +1,8 @@
 type Todo = {
-  text: string;
-  id: number;
-  priority: number;
-  isDone: boolean;
+	text: string;
+	id: number;
+	priority: number;
+	isDone: boolean;
 };
 
 type ToggleTodo = (selectedTodo: Todo) => void;

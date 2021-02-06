@@ -1,0 +1,24 @@
+.complete {
+	text-decoration: line-through;
+}
+
+.theList__item {
+	color: #333;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 15px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+}
+
+.theList__item:hover {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.todo {
+	display: flex;
+	justify-content: space-between;
+}
+
+.todo__text {
+	padding: 0px 10px;
+}
