@@ -26,22 +26,20 @@ const App: React.FC = () => {
 		setTodos(newTodos);
 	};
 
-	const addTodo: AddTodo = (newTodo) => {
+	const addTodo: AddTodo = ({ text, priority }) => {
 		setTodos([
 			...todos,
 			{
-				text: newTodo.text,
+				text,
 				id: Number(Date.now()),
-				priority: newTodo.priority,
+				priority,
 				isDone: false
 			}
 		]);
 	};
 
 	const deleteTodo: DeleteTodo = (id) => {
-		const filteredTodos = todos.filter((todo) => {
-			return todo.id !== id;
-		});
+		const filteredTodos = todos.filter((todo) => todo.id !== id);
 		setTodos(filteredTodos);
 	};
 
@@ -57,17 +55,14 @@ const App: React.FC = () => {
 				return [];
 		}
 	};
+
 	const getCompleted = (): Array<Todo> => {
-		const completedTodos = todos.filter((todo) => {
-			return todo.isDone;
-		});
+		const completedTodos = todos.filter(({ isDone }) => isDone);
 		return completedTodos;
 	};
 
 	const getUncompleted = (): Array<Todo> => {
-		const unCompletedTodos = todos.filter((todo) => {
-			return !todo.isDone;
-		});
+		const unCompletedTodos = todos.filter(({ isDone }) => !isDone);
 		return unCompletedTodos;
 	};
 
