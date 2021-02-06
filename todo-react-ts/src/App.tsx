@@ -3,8 +3,15 @@ import { AddTodoForm } from './components/AddTodoForm';
 import { initialTodos } from './shared/db';
 import { TodoList } from './components/TodoList';
 
+enum ActiveTypes {
+	ALL = 'all',
+	DONE = 'done',
+	UNDONE = 'undone'
+}
+
 const App: React.FC = () => {
 	const [ todos, setTodos ] = useState(initialTodos);
+	const [ activeType, setActiveType ] = useState(ActiveTypes.ALL);
 
 	const toggleTodo: ToggleTodo = (selectedTodo) => {
 		const newTodos = todos.map((todo) => {
@@ -38,31 +45,41 @@ const App: React.FC = () => {
 		setTodos(filteredTodos);
 	};
 
-	const showComplete = (): void => {
-		const doneTodos = todos.filter((todo) => {
+	const getActiveTodos = (): Array<Todo> => {
+		switch (activeType) {
+			case ActiveTypes.ALL:
+				return todos;
+			case ActiveTypes.DONE:
+				return getCompleted();
+			case ActiveTypes.UNDONE:
+				return getUncompleted();
+			default:
+				return [];
+		}
+	};
+	const getCompleted = (): Array<Todo> => {
+		const completedTodos = todos.filter((todo) => {
 			return todo.isDone;
 		});
-		setTodos(doneTodos);
+		return completedTodos;
 	};
-	// const showDone = (): void => {
-	// 	const doneTodos = todos.filter((todo) => {
-	// 		return !todo.isDone;
-	// 	});
-	// 	setTodos(doneTodos);
-	// };
-	// const showAll = (): void => {
-	// 	setTodos(todos);
-	// };
+
+	const getUncompleted = (): Array<Todo> => {
+		const unCompletedTodos = todos.filter((todo) => {
+			return !todo.isDone;
+		});
+		return unCompletedTodos;
+	};
 
 	return (
 		<div className='todoListMain'>
 			<div className='header'>
 				<AddTodoForm addTodo={addTodo} />
 			</div>
-			<TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-			<button>all</button>
-			<button onClick={showComplete}>done</button>
-			<button>undone</button>
+			<TodoList todos={getActiveTodos()} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+			<button onClick={() => setActiveType(ActiveTypes.ALL)}>all</button>
+			<button onClick={() => setActiveType(ActiveTypes.DONE)}>done</button>
+			<button onClick={() => setActiveType(ActiveTypes.UNDONE)}>undone</button>
 		</div>
 	);
 };
