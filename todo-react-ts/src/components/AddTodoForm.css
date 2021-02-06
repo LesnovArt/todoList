@@ -4,16 +4,21 @@
 
 .todoForm__input {
 	padding: 10px;
-	border: 2px solid #fff;
+	border: 2px solid #FFF;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 	word-wrap: break-word;
 }
 
+.todoForm__select{
+  padding: 9px;
+  outline: none;
+  border: 1px solid #FFF;
+  font-size: 11px;
+}
+
 .todoForm__btn {
 	padding: 10px;
-	margin: 10px;
-	margin-right: 0px;
 	background-color: #0066ff;
 	color: #fff;
 	border: 2px solid #0066ff;

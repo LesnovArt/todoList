@@ -30,9 +30,9 @@ const App: React.FC = () => {
 		setTodos([
 			...todos,
 			{
-				text: newTodo,
+				text: newTodo.text,
 				id: Number(Date.now()),
-				priority: 5,
+				priority: newTodo.priority,
 				isDone: false
 			}
 		]);
@@ -77,9 +77,17 @@ const App: React.FC = () => {
 				<AddTodoForm addTodo={addTodo} />
 			</div>
 			<TodoList todos={getActiveTodos()} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-			<button onClick={() => setActiveType(ActiveTypes.ALL)}>all</button>
-			<button onClick={() => setActiveType(ActiveTypes.DONE)}>done</button>
-			<button onClick={() => setActiveType(ActiveTypes.UNDONE)}>undone</button>
+			<div className='btn-wrapper'>
+				<button className='nav-btn' onClick={() => setActiveType(ActiveTypes.ALL)}>
+					all
+				</button>
+				<button className='nav-btn' onClick={() => setActiveType(ActiveTypes.DONE)}>
+					done
+				</button>
+				<button className='nav-btn' onClick={() => setActiveType(ActiveTypes.UNDONE)}>
+					undone
+				</button>
+			</div>
 		</div>
 	);
 };

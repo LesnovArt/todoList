@@ -2,16 +2,34 @@ import React, { ChangeEvent, FormEvent, useState } from 'react';
 import './AddTodoForm.css';
 
 export const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
-	const [ newTodo, setNewTodo ] = useState('');
+	const initialNewTodo: NewTodo = {
+		text: '',
+		priority: 1
+	};
+	const [ newTodo, setNewTodo ] = useState(initialNewTodo);
 
-	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-		setNewTodo(e.target.value);
+	const setText = (e: ChangeEvent<HTMLInputElement>): void => {
+		const text = e.target.value;
+
+		setNewTodo({
+			...newTodo,
+			text
+		});
 	};
 
-	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+	const setPriority = (e: ChangeEvent<HTMLSelectElement>): void => {
+		const priority = Number(e.target.value);
+
+		setNewTodo({
+			...newTodo,
+			priority
+		});
+	};
+
+	const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
 		addTodo(newTodo);
-		setNewTodo('');
+		setNewTodo(initialNewTodo);
 	};
 
 	return (
@@ -19,15 +37,12 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
 			<input
 				className='todoForm__input'
 				type='text'
-				value={newTodo}
-				onChange={handleChange}
+				value={newTodo.text}
+				onChange={setText}
 				placeholder='Enter Task'
 				required
 			/>
-			<button className='todoForm__btn' type='submit'>
-				Add Todo
-			</button>
-			<select className='todoForm__select' name='priority'>
+			<select className='todoForm__select' name='priority' value={newTodo.priority} onChange={setPriority}>
 				<option value='1'>1</option>
 				<option value='2'>2</option>
 				<option value='3'>3</option>
@@ -39,6 +54,9 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
 				<option value='9'>9</option>
 				<option value='10'>10</option>
 			</select>
+			<button className='todoForm__btn' type='submit'>
+				Add Todo
+			</button>
 		</form>
 	);
 };

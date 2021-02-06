@@ -22,3 +22,7 @@
 .todo__text {
 	padding: 0px 10px;
 }
+
+.todo__priority{
+  z-index: 2;
+}
