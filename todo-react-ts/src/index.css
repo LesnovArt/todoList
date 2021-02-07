@@ -1,3 +1,7 @@
+:root {
+	--main-bg-color: #b8860b;
+}
+
 button {
 	outline: none;
 	cursor: pointer;
@@ -11,7 +15,8 @@ li {
 }
 
 body {
-	background-color: #66ccff;
+	background-image: url(./assets/01.jpg);
+	background-size: cover;
 	font-family: sans-serif;
 	font-size: 16px;
 }
@@ -19,7 +24,8 @@ body {
 .container {
 	display: flex;
 	padding: 20px;
-	justify-content: center;
+	justify-content: flex-end;
+	margin-right: 150px;
 }
 
 .todoListMain {
@@ -27,19 +33,21 @@ body {
 }
 .btn-wrapper {
 	display: flex;
-	/* justify-content: space-between; */
 }
 .nav-btn {
 	flex: 1 0 auto;
-	padding: 10px;
 	margin: 10px;
-	background-color: #0066ff;
-	color: #fff;
-	border: 2px solid #0066ff;
+}
+
+.btn {
+	padding: 10px;
+	background-color: var(--main-bg-color);
+	color: rgb(24, 10, 10);
+	border: 2px solid var(--main-bg-color);
 	border-radius: 5px;
 }
 
-.nav-btn:hover {
-	background-color: #003399;
-	border: 2px solid #003399;
+.btn:hover {
+	background-color: var(--main-bg-color);
+	border: 2px solid var(--main-bg-color);
 }

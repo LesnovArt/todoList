@@ -54,7 +54,7 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
 				<option value='9'>9</option>
 				<option value='10'>10</option>
 			</select>
-			<button className='todoForm__btn' type='submit'>
+			<button className='btn todoForm__btn' type='submit'>
 				Add Todo
 			</button>
 		</form>

@@ -73,13 +73,13 @@ const App: React.FC = () => {
 			</div>
 			<TodoList todos={getActiveTodos()} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
 			<div className='btn-wrapper'>
-				<button className='nav-btn' onClick={() => setActiveType(ActiveTypes.ALL)}>
+				<button className='btn nav-btn' onClick={() => setActiveType(ActiveTypes.ALL)}>
 					all
 				</button>
-				<button className='nav-btn' onClick={() => setActiveType(ActiveTypes.DONE)}>
+				<button className='btn nav-btn' onClick={() => setActiveType(ActiveTypes.DONE)}>
 					done
 				</button>
-				<button className='nav-btn' onClick={() => setActiveType(ActiveTypes.UNDONE)}>
+				<button className='btn nav-btn' onClick={() => setActiveType(ActiveTypes.UNDONE)}>
 					undone
 				</button>
 			</div>
