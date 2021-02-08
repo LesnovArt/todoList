@@ -1,61 +1,61 @@
 .complete {
-	text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .theList__item {
-	color: #333;
-	background-color: rgba(255, 255, 255, 0.5);
-	padding: 15px;
-	margin-bottom: 15px;
-	border-radius: 5px;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
 }
 
 .theList__item:hover {
-	background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .todo {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .todo__checkbox {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	padding: 6px;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  padding: 6px;
 }
 .checkbox-style {
-	display: inline-flex;
-	align-items: center;
-	user-select: none;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
 }
 .checkbox-style::before {
-	content: '';
-	display: inline-block;
-	width: 1em;
-	height: 1em;
-	flex-shrink: 0;
-	flex-grow: 0;
-	border: 1px solid var(--main-bg-color);
-	background-color: var(--main-bg-color);
-	border-radius: 0.25em;
-	margin-right: 0.5em;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 50% 50%;
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid var(--main-bg-color);
+  background-color: var(--main-bg-color);
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
 }
 
 .todo__checkbox:checked + label::before {
-	border-color: var(--main-bg-color);
-	background-color: var(--main-bg-color);
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+  border-color: var(--main-bg-color);
+  background-color: var(--main-bg-color);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 }
 
 .todo__checkbox:focus + label::before {
-	border-color: var(--main-bg-color);
-	background-color: var(--main-bg-color);
+  border-color: var(--main-bg-color);
+  background-color: var(--main-bg-color);
 }
 
 .todo__text {
-	padding: 0px 10px;
+  padding: 0px 10px;
 }

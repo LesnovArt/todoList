@@ -1,22 +1,30 @@
 .todoForm {
-	margin: 100px 0px 10px 0px;
+  margin: 100px 0px 10px 0px;
 }
 
 .todoForm__input {
-	padding: 10px;
-	border: 2px solid #fff;
-	border-radius: 5px;
-	word-wrap: break-word;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.labelForSelect {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
 }
 
 .todoForm__select {
-	padding: 9px;
-	outline: none;
-  background-color: rgba(255, 255, 255, 0.5);
-	font-size: 11px;
+  padding: 9px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 11px;
+  cursor: pointer;
 }
 
 .todoForm__btn {
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
