@@ -21,8 +21,8 @@
 .todo__checkbox {
 	position: absolute;
 	opacity: 0;
-  cursor: pointer;
-  padding: 6px;
+	cursor: pointer;
+	padding: 6px;
 }
 .checkbox-style {
 	display: inline-flex;
