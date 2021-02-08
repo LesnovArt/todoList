@@ -35,7 +35,7 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
   return (
     <form className='todoForm' onSubmit={handleSubmit}>
       <input
-        className='todoForm__input'
+        className='todoForm__input input'
         type='text'
         value={newTodo.text}
         onChange={setText}
@@ -43,7 +43,7 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
         maxLength={35}
         required
       />
-      <label className='labelForSelect'>
+      <label className='todoForm__labelForSelect'>
         Priority
         <select
           id='prioritySelect'
@@ -65,7 +65,7 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
           <option value='10'>10</option>
         </select>
       </label>
-      <button className='btn todoForm__btn' type='submit'>
+      <button className='todoForm__btn btn' type='submit'>
         Add Todo
       </button>
     </form>

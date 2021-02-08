@@ -31,13 +31,12 @@ body {
 .todoListMain {
   max-width: 400px;
 }
-.btn-wrapper {
-  display: flex;
-  margin: 0px -10px;
-}
-.nav-btn {
-  flex: 1 0 auto;
-  margin: 10px;
+
+.input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
 }
 
 .btn {
@@ -46,6 +45,33 @@ body {
   color: rgb(24, 10, 10);
   border: 2px solid var(--main-bg-color);
   border-radius: 5px;
+}
+
+.search-form{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .search-form__sort-btn {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+} */
+
+.sort-btn {
+  flex: 1 0 auto;
+  margin-left: 14px;
+  margin-bottom: 10px;
+}
+
+.footer__nav-btn {
+  display: flex;
+  margin: 0px -7px;
+}
+
+.nav-btn {
+  flex: 1 0 auto;
+  margin: 7px;
 }
 
 .btn:hover {

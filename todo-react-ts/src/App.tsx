@@ -95,9 +95,9 @@ const App: React.FC = () => {
     <div className='todoListMain'>
       <div className='header'>
         <AddTodoForm addTodo={addTodo} />
-        <form>
+        <form className='search-form'>
           <input
-            className='todoForm__input'
+            className='search-form__input input'
             type='text'
             value={query}
             onChange={handleChange}
@@ -105,21 +105,20 @@ const App: React.FC = () => {
             maxLength={35}
             required
           />
-          <button className='btn ' onClick={() => setActiveType(ActiveTypes.ALL)}>
-            Date
-          </button>
-          <button className='btn ' onClick={() => setActiveType(ActiveTypes.ALL)}>
-            Priority
-          </button>
-          <button className='btn ' onClick={() => setActiveType(ActiveTypes.ALL)}>
-            ABCDF
-          </button>
+          {/* <div className='search-form__sort-btn'> */}
+            <button className='btn sort-btn' onClick={() => setActiveType(ActiveTypes.ALL)}>
+              Date
+            </button>
+            <button className='btn sort-btn' onClick={() => setActiveType(ActiveTypes.ALL)}>
+              Priority
+            </button>
+          {/* </div> */}
         </form>
       </div>
       <div className='section'>
         <TodoList todos={getActiveTodos()} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       </div>
-      <div className='btn-wrapper'>
+      <div className='footer__nav-btn'>
         <button className='btn nav-btn' onClick={() => setActiveType(ActiveTypes.ALL)}>
           All
         </button>
